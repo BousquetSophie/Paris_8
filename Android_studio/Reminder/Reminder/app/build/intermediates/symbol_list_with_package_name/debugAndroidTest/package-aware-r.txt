@@ -1,3 +1,0 @@
-com.example.liste.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

@@ -1,6 +1,0 @@
-com.example.liste.test.app-core-1.5.0-0 /home/sophie/.gradle/caches/transforms-3/58d859f601c44aeb563b33b772ad68e3/transformed/core-1.5.0/res
-com.example.liste.test.app-annotation-experimental-1.3.0-1 /home/sophie/.gradle/caches/transforms-3/c24db9bdb80d810a710306cb52267602/transformed/annotation-experimental-1.3.0/res
-com.example.liste.test.app-androidTest-2 /home/sophie/AndroidStudioProjects/LL2/app/build/generated/res/resValues/androidTest/debug
-com.example.liste.test.app-mergeDebugAndroidTestResources-3 /home/sophie/AndroidStudioProjects/LL2/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
-com.example.liste.test.app-mergeDebugAndroidTestResources-4 /home/sophie/AndroidStudioProjects/LL2/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
-com.example.liste.test.app-merged_res-5 /home/sophie/AndroidStudioProjects/LL2/app/build/intermediates/merged_res/debugAndroidTest
