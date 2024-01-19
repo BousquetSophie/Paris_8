@@ -1,0 +1,1 @@
+while true { return printi 42; return printi 22; }

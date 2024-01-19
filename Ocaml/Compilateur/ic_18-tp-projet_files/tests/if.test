@@ -1,0 +1,5 @@
+int a;
+a = scani;
+if (a < 10)
+{return printb true;}
+else {return printb false;}

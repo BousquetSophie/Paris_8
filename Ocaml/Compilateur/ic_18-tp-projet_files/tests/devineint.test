@@ -1,0 +1,7 @@
+int a;
+a = scani;
+
+while (a <= 10) {
+	a = scani;
+}
+return printi a;

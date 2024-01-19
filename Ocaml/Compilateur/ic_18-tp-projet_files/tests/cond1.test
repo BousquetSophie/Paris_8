@@ -1,0 +1,1 @@
+if true {return printi 42;} else {return printi 10;}

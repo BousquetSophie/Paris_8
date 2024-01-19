@@ -1,0 +1,5 @@
+int a;
+a = 23;
+int b;
+b = 52;
+return printi a;
