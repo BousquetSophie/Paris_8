@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TEXT SYSTEM "https://cocoon.huma-num.fr/schemas/Archive.dtd">
+<TEXT xml:lang="fr" id="crdo-FRA_ESLO_omelette010">
+    <HEADER>
+        <TITLE xml:lang="fr">010</TITLE>
+        <SOUNDFILE href="010.wav"/>
+    </HEADER>
+    <S who="MB" id="elso010s1">
+        <AUDIO start="0.01" end="5.273"/>
+        <FORM kindOf="ortho">je vais vous poser une dernière question euh avant de demander de() quelques petits renseignements euh très très brefs euh</FORM>
+    </S>
+    <S who="MB" id="elso010s2">
+        <AUDIO start="8.357" end="10.537"/>
+        <FORM kindOf="ortho">comment est-ce qu'on fait une omelette d'après vous</FORM>
+    </S>
+    <S who="MB" id="elso010s3">
+        <AUDIO start="11.878" end="12.86"/>
+        <FORM kindOf="ortho">comment est-ce qu'on fait une omelette</FORM>
+    </S>
+    <S who="JI 306" id="elso010s4">
+        <AUDIO start="12.86" end="17.135"/>
+        <FORM kindOf="ortho">oh mais i(l) y a différentes façons de faire une omelette par exemple j'en ai fait une dimanche soir</FORM>
+    </S>
+    <S who="MB" id="elso010s5">
+        <AUDIO start="12.86" end="17.135"/>
+        <FORM kindOf="ortho">dites-moi oui oui</FORM>
+    </S>
+    <S who="MB" id="elso010s6">
+        <AUDIO start="17.135" end="18.333"/>
+        <FORM kindOf="ortho">racontez-moi alors</FORM>
+    </S>
+</TEXT>

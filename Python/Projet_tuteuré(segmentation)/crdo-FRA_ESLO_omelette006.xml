@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TEXT SYSTEM "https://cocoon.huma-num.fr/schemas/Archive.dtd">
+<TEXT xml:lang="fr" id="crdo-FRA_ESLO_omelette006">
+    <HEADER>
+        <TITLE xml:lang="fr">006</TITLE>
+        <SOUNDFILE href="006.wav"/>
+    </HEADER>
+    <S who="JK" id="elso006s1">
+        <AUDIO start="0" end="1.192"/>
+        <FORM kindOf="ortho">cette euh</FORM>
+    </S>
+    <S who="JK" id="elso006s2">
+        <AUDIO start="1.192" end="3.342"/>
+        <FORM kindOf="ortho"> [mic:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s3">
+        <AUDIO start="3.342" end="4.983"/>
+        <FORM kindOf="ortho">cette dernière question [r:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s4">
+        <AUDIO start="6.025" end="8.714"/>
+        <FORM kindOf="ortho">euh je crois que la question va vous faire rire mais</FORM>
+    </S>
+    <S who="JK" id="elso006s5">
+        <AUDIO start="8.714" end="9.666"/>
+        <FORM kindOf="ortho"> [tx:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s6">
+        <AUDIO start="9.666" end="11.666"/>
+        <FORM kindOf="ortho">je la pose quand même et</FORM>
+    </S>
+    <S who="FD 237" id="elso006s7">
+        <AUDIO start="9.666" end="11.666"/>
+        <FORM kindOf="ortho">hm je vous en prie</FORM>
+    </S>
+    <S who="JK" id="elso006s8">
+        <AUDIO start="12.534" end="13.935"/>
+        <FORM kindOf="ortho">je vous demande monsieur</FORM>
+    </S>
+    <S who="JK" id="elso006s9">
+        <AUDIO start="14.624" end="17.672"/>
+        <FORM kindOf="ortho">de ne pas vous laisser influencer par votre femme [rire:noise:previous]</FORM>
+    </S>
+    <S who="FD 237" id="elso006s10">
+        <AUDIO start="17.672" end="19.283"/>
+        <FORM kindOf="ortho">i(l) (n')y a pas de danger oh la</FORM>
+    </S>
+    <S who="JK" id="elso006s11">
+        <AUDIO start="19.283" end="20.385"/>
+        <FORM kindOf="ortho">c'est tout simple</FORM>
+    </S>
+    <S who="FD 237" id="elso006s12">
+        <AUDIO start="20.385" end="20.768"/>
+        <FORM kindOf="ortho">hm</FORM>
+    </S>
+    <S who="JK" id="elso006s13">
+        <AUDIO start="20.768" end="23.726"/>
+        <FORM kindOf="ortho">je voudrais vous demander comment est-ce qu'on fait une omelette chez vous</FORM>
+    </S>
+    <S who="FD 237" id="elso006s14">
+        <AUDIO start="24.295" end="24.828"/>
+        <FORM kindOf="ortho">une omelette</FORM>
+    </S>
+    <S who="JK" id="elso006s15">
+        <AUDIO start="24.828" end="25.301"/>
+        <FORM kindOf="ortho">une omelette</FORM>
+    </S>
+    <S who="FD 237" id="elso006s16">
+        <AUDIO start="25.69" end="26.522"/>
+        <FORM kindOf="ortho">en cassant les oeufs</FORM>
+    </S>
+    <S who="FD 237" id="elso006s17">
+        <AUDIO start="26.522" end="27.271"/>
+        <FORM kindOf="ortho"> [rire en fond:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s18">
+        <AUDIO start="27.864" end="29.325"/>
+        <FORM kindOf="ortho">oui mais euh</FORM>
+    </S>
+    <S who="FD 237" id="elso006s19">
+        <AUDIO start="29.325" end="30.876"/>
+        <FORM kindOf="ortho">e() baveuse</FORM>
+    </S>
+    <S who="JK" id="elso006s20">
+        <AUDIO start="29.325" end="30.876"/>
+        <FORM kindOf="ortho">décrivez voir un peu</FORM>
+    </S>
+    <S who="FD 237" id="elso006s21">
+        <AUDIO start="31.379" end="32.301"/>
+        <FORM kindOf="ortho">comment</FORM>
+    </S>
+    <S who="JK" id="elso006s22">
+        <AUDIO start="31.379" end="32.301"/>
+        <FORM kindOf="ortho">comment vous faites</FORM>
+    </S>
+    <S who="JK" id="elso006s23">
+        <AUDIO start="32.78" end="34.511"/>
+        <FORM kindOf="ortho">décrivez un peu ce que vous faites</FORM>
+    </S>
+    <S who="FD 237" id="elso006s24">
+        <AUDIO start="34.511" end="35.583"/>
+        <FORM kindOf="ortho">pour faire l'omelette</FORM>
+    </S>
+    <S who="JK" id="elso006s25">
+        <AUDIO start="35.583" end="37.852"/>
+        <FORM kindOf="ortho">pour faire l'omelette</FORM>
+    </S>
+    <S who="FD 237" id="elso006s26">
+        <AUDIO start="35.583" end="37.852"/>
+        <FORM kindOf="ortho">ah vous tombez bien c'est moi qui les fait toutes ici</FORM>
+    </S>
+    <S who="JK" id="elso006s27">
+        <AUDIO start="37.852" end="39.732"/>
+        <FORM kindOf="ortho">ah bon alors j'écoute</FORM>
+    </S>
+    <S who="FD 237" id="elso006s28">
+        <AUDIO start="39.732" end="40.714"/>
+        <FORM kindOf="ortho">je casse les oeufs</FORM>
+    </S>
+    <S who="FD 237" id="elso006s29">
+        <AUDIO start="40.714" end="41.582"/>
+        <FORM kindOf="ortho"> [mic:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s30">
+        <AUDIO start="41.582" end="42.474"/>
+        <FORM kindOf="ortho">oui</FORM>
+    </S>
+    <S who="FD 237" id="elso006s31">
+        <AUDIO start="42.474" end="43.306"/>
+        <FORM kindOf="ortho">dans un bol</FORM>
+    </S>
+    <S who="FD 237" id="elso006s32">
+        <AUDIO start="43.696" end="44.798"/>
+        <FORM kindOf="ortho">ou dans un saladier</FORM>
+    </S>
+    <S who="FD 237" id="elso006s33">
+        <AUDIO start="45.391" end="45.924"/>
+        <FORM kindOf="ortho">sel</FORM>
+    </S>
+    <S who="FD 237" id="elso006s34">
+        <AUDIO start="46.337" end="46.78"/>
+        <FORM kindOf="ortho">poivre</FORM>
+    </S>
+    <S who="FD 237" id="elso006s35">
+        <AUDIO start="47.109" end="48.36"/>
+        <FORM kindOf="ortho">des petits morceaux de beurre</FORM>
+    </S>
+    <S who="FD 237" id="elso006s36">
+        <AUDIO start="49.552" end="50.175"/>
+        <FORM kindOf="ortho">que je mets</FORM>
+    </S>
+    <S who="FD 237" id="elso006s37">
+        <AUDIO start="50.678" end="51.271"/>
+        <FORM kindOf="ortho">avec les</FORM>
+    </S>
+    <S who="FD 237" id="elso006s38">
+        <AUDIO start="51.594" end="52.636"/>
+        <FORM kindOf="ortho">que je bats avec les oeufs</FORM>
+    </S>
+    <S who="FD 237" id="elso006s39">
+        <AUDIO start="53.169" end="55.319"/>
+        <FORM kindOf="ortho">je mets des tranches de baccon dedans</FORM>
+    </S>
+    <S who="FD 237" id="elso006s40">
+        <AUDIO start="55.553" end="57.403"/>
+        <FORM kindOf="ortho">je tourne tout et dans la poêle très chaude</FORM>
+    </S>
+    <S who="FD 237" id="elso006s41">
+        <AUDIO start="58.302" end="59.464"/>
+        <FORM kindOf="ortho">voilà l'omelette pour moi</FORM>
+    </S>
+    <S who="FD 237" id="elso006s42">
+        <AUDIO start="59.464" end="60.865"/>
+        <FORM kindOf="ortho"> [rire en fond:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s43">
+        <AUDIO start="60.865" end="61.488"/>
+        <FORM kindOf="ortho">eh bien</FORM>
+    </S>
+    <S who="FD 237" id="elso006s44">
+        <AUDIO start="61.488" end="62.38"/>
+        <FORM kindOf="ortho">c'est moi qui les fait toutes</FORM>
+    </S>
+    <S who="006LOC" id="elso006s45">
+        <AUDIO start="62.38" end="63.003"/>
+        <FORM kindOf="ortho">ah oui</FORM>
+    </S>
+    <S who="FD 237" id="elso006s46">
+        <AUDIO start="63.003" end="64.524"/>
+        <FORM kindOf="ortho">madame a horreur de faire cuire les oeufs</FORM>
+    </S>
+    <S who="006LOC" id="elso006s47">
+        <AUDIO start="64.524" end="65.087"/>
+        <FORM kindOf="ortho">faire une omelette</FORM>
+    </S>
+    <S who="006LOC" id="elso006s48">
+        <AUDIO start="65.44" end="67.985"/>
+        <FORM kindOf="ortho"> [rire en fond:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s49">
+        <AUDIO start="67.985" end="69.955"/>
+        <FORM kindOf="ortho">très bien [rire:noise:previous] [pap:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s50">
+        <AUDIO start="71.057" end="72.398"/>
+        <FORM kindOf="ortho">alors</FORM>
+    </S>
+    <S who="006LOC" id="elso006s51">
+        <AUDIO start="71.057" end="72.398"/>
+        <FORM kindOf="ortho">pas beaucoup cuite</FORM>
+    </S>
+    <S who="JK" id="elso006s52">
+        <AUDIO start="72.398" end="73.62"/>
+        <FORM kindOf="ortho">ah non baveuse</FORM>
+    </S>
+    <S who="006LOC" id="elso006s53">
+        <AUDIO start="72.398" end="73.62"/>
+        <FORM kindOf="ortho">baveuse</FORM>
+    </S>
+    <S who="JK" id="elso006s54">
+        <AUDIO start="73.62" end="77.297"/>
+        <FORM kindOf="ortho"> [rire en fond:noise:instantaneous]</FORM>
+    </S>
+    <S who="FD 237" id="elso006s55">
+        <AUDIO start="77.297" end="78.578"/>
+        <FORM kindOf="ortho">vous m'en mettez l'eau à la bouche</FORM>
+    </S>
+    <S who="FD 237" id="elso006s56">
+        <AUDIO start="78.578" end="80.279"/>
+        <FORM kindOf="ortho"> [rire en fond:noise:instantaneous]</FORM>
+    </S>
+    <S who="JK" id="elso006s57">
+        <AUDIO start="82.908" end="84.1"/>
+        <FORM kindOf="ortho">vous n'ajoutez jamais du lait</FORM>
+    </S>
+    <S who="FD 237" id="elso006s58">
+        <AUDIO start="85.142" end="85.705"/>
+        <FORM kindOf="ortho">euh</FORM>
+    </S>
+    <S who="FD 237" id="elso006s59">
+        <AUDIO start="86.028" end="87.04"/>
+        <FORM kindOf="ortho">c() ça se fait</FORM>
+    </S>
+    <S who="JK" id="elso006s60">
+        <AUDIO start="87.244" end="87.603"/>
+        <FORM kindOf="ortho">oui</FORM>
+    </S>
+    <S who="FD 237" id="elso006s61">
+        <AUDIO start="88.801" end="90.268"/>
+        <FORM kindOf="ortho">ça se fait i(l) y en a qui ajoutent du lait</FORM>
+    </S>
+    <S who="JK" id="elso006s62">
+        <AUDIO start="90.927" end="93.831"/>
+        <FORM kindOf="ortho">mais vous personnellement vous ne le faites pas non</FORM>
+    </S>
+    <S who="FD 237" id="elso006s63">
+        <AUDIO start="90.927" end="93.831"/>
+        <FORM kindOf="ortho">oui i(l) y en a qui en mettent moi non non</FORM>
+    </S>
+    <S who="FD 237" id="elso006s64">
+        <AUDIO start="94.939" end="95.807"/>
+        <FORM kindOf="ortho">ma mère le faisait</FORM>
+    </S>
+    <S who="FD 237" id="elso006s65">
+        <AUDIO start="96.376" end="100.029"/>
+        <FORM kindOf="ortho">i(l) y en a qui i(l) y en a qui mettent une petite goutte d'eau i(l) y en a qui mettent un peu d'huile dedans</FORM>
+    </S>
+    <S who="FD 237" id="elso006s66">
+        <AUDIO start="101.556" end="102.933"/>
+        <FORM kindOf="ortho">au régiment on on</FORM>
+    </S>
+    <S who="FD 237" id="elso006s67">
+        <AUDIO start="103.352" end="105.238"/>
+        <FORM kindOf="ortho">on mettait deux louches d'huile à la place des oeufs</FORM>
+    </S>
+    <S who="FD 237" id="elso006s68">
+        <AUDIO start="105.657" end="107.573"/>
+        <FORM kindOf="ortho">et on se faisait [toux en fond:noise:previous]des petits entremets avec les oeufs</FORM>
+    </S>
+    <S who="JK" id="elso006s69">
+        <AUDIO start="108.861" end="116.496"/>
+        <FORM kindOf="ortho"> [rire:noise:instantaneous]oui [rire:noise:instantaneous]bon</FORM>
+    </S>
+</TEXT>
