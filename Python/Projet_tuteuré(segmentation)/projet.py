@@ -2,59 +2,105 @@ from lxml import etree
 import spacy
 import re
 
-nlp = spacy.load("fr_core_news_sm")
-fichier = etree.parse("crdo-FRA_ESLO_omelette006.xml")
+print("Chargement du modèle de langue en cours veuillez patienter.")
+#Chargement du modèle de traitement du langage naturel pour le français en utilisant que la tokenisation
+nlp = spacy.load("fr_core_news_sm", disable=["tagger", "parser", "ner"])
 
+#Liste des mots d'hésitation
 hesitation = ["euh", "oh", "hm", "ben"]
+#Expression régulière pour les parenthèses
 parenthese = r"[()]"
+#Expressions régulières pour le texte entre parenthèses
 texte_p = r"[A-Z]|[a-z]\([A-Z]|[a-z]"
 texte_po = r"[A-Z]|[a-z]\([A-Z]|[a-z]"
 texte_pf = r"[A-Z]|[a-z]\)[A-Z]|[a-z]"
 est_dans_p = False
 texte_dans_p = ""
 
-with open('resultat.xml', 'w') as resultat:
+titre = input("Entrez le nom de votre document : ")
+#Chargement du fichier XML
+fichier = etree.parse(titre)
+
+titre2 = titre.replace(".xml", "_tokeniser.xml")
+
+with open(titre2, 'w') as resultat:
+    print("\nVotre document est en cours de tokenisation veuillez patienter.\n")
+    #En-tête du fichier XML
     resultat.write('<?xml version="1.0" encoding="utf-8"?>' + "\n")
-    resultat.write("<dialogues>\n")
-    for dialogue in fichier.xpath("/TEXT/S/FORM"):
-        resultat.write("    <dialogue>\n")
+    resultat.write("<entretient>\n")
+    mot_avant = "" #utiliser pour les répétitions
+    for i, dialogue in enumerate(fichier.xpath("/TEXT/S/FORM")):
+        #On ajoute des espace après les ] sinon sa créer des problème de tokenisation
+        dialogue.text = re.sub(r'\]', r'] ', dialogue.text)
+        resultat.write("    <tour id="+'"'+ str(i) +'">\n')
         phrase = nlp(dialogue.text)
+        #Parcourir chaque token des dialogues
         for i, token in enumerate(phrase):
+            #Gestion des hésitation
             if token.text in hesitation :
                 resultat.write("        <hesitation> " + token.text + " </hesitation>\n")
-            elif (token.text == "(") or (token.text == ")"):
-                if(re.findall(texte_po, phrase[i-1].text)) and (token.text == ")"):
-                    pass
-                elif(re.findall(texte_pf, phrase[i+1].text)) and (token.text == "("):
-                    pass
-                else:
-                    resultat.write("        <annomalie> " + token.text + " </annomalie>\n")
+                mot_avant = token.text
+            #Ignorer les parenthèses
+            elif(token.text == "(") or (token.text == ")"):
+                pass
+            #Gestion des mots contenant des parenthèses
             elif ("(" in token.text) or (")" in token.text):
                 txt = token.text
                 txt = re.sub(parenthese, "", txt)
-                if(phrase[i+1].text == ")"):
-                    resultat.write("        <annomalie original=" + '"' + token.text + ')"> ' + txt + " </annomalie>\n")
+                if(i+1 < len(phrase)) and (phrase[i+1].text == ")"):
+                    if(mot_avant == txt): #Gestion de répétition avec anomalie
+                        resultat.write("        <repetition original=" + '"' + token.text + ')"> ' + txt + " </repetition>\n")
+                    else :
+                        resultat.write("        <mot original=" + '"' + token.text + ')"> ' + txt + " </mot>\n")
                 elif(phrase[i-1].text == "("):
-                    resultat.write("        <annomalie original=" + '"(' + token.text + ')"> ' + txt + " </annomalie>\n")
+                    if(mot_avant == txt): #Gestion de répétition avec anomalie
+                        resultat.write("        <repetition original=" + '"(' + token.text + '"> ' + txt + " </repetition>\n")
+                    else :
+                        resultat.write("        <mot original=" + '"(' + token.text + '"> ' + txt + " </mot>\n")
                 else :
-                    resultat.write("        <annomalie original=" + '"' + token.text + '"> ' + txt + " </annomalie>\n")
+                    if(mot_avant == txt): #Gestion de répétition avec anomalie
+                        resultat.write("        <repetition original=" + '"' + token.text + '"> ' + txt + " </repetition>\n")
+                    else :
+                        resultat.write("        <mot original=" + '"' + token.text + '"> ' + txt + " </mot>\n")
+                mot_avant = txt
+            #Gestion des parenthèse de c() et e()
+            elif(i+2 < len(phrase)) and (phrase[i+1].text == "(") and (phrase[i+2].text == ")"):
+                mot = token.text + "()"
+                if(mot == "e()"):
+                    resultat.write("        <hesitation original=" + '"' + mot + '"> heu </hesitation>\n')
+                    mot_avant = "heu"
+                elif(mot == "c()"):
+                    if(mot_avant == "ça"): #Gestion de répétition avec anomalie
+                        resultat.write("        <repetition original=" + '"' + mot + '"> ça </repetition>\n')
+                    else:
+                        resultat.write("        <mot original=" + '"' + mot + '"> ça </mot>\n')
+                    mot_avant = "ça"
+            #Extraction des - dans les tokens
             elif (token.text[0] == "-"):
                 resultat.write("        <mot> " + "-" + " </mot>\n")
                 resultat.write("        <mot> " + token.text[1:] + " </mot>\n")
-            elif (phrase[i-1].text == token.text):
+                mot_avant = token.text[1:]
+            #Gestion des répétitions
+            elif (mot_avant == token.text):
                 resultat.write("        <repetition> " + token.text + " </repetition>\n")
-
+                mot_avant = token.text
+            #Gestion des descriptions d'ambiance
             elif (est_dans_p or token.text == "["):
                 if (token.text == "]"):
                     resultat.write("        <ambiance> " + texte_dans_p + "]" + " </ambiance>\n")
+                    mot_avant = texte_dans_p
                     est_dans_p = False
                     texte_dans_p = ""
                 else:
-                    texte_dans_p += token.text + " "
+                    texte_dans_p += token.text
                     est_dans_p = True
-                
-
+            #Gestion des mots sans anomalie
             else :
-                resultat.write("        <mot> " + token.text + " </mot>\n")
-        resultat.write("    </dialogue>\n")
-    resultat.write("</dialogues>\n")
+                if (token.text != " "):
+                    resultat.write("        <mot> " + token.text + " </mot>\n")
+                    mot_avant = token.text
+            
+        resultat.write("    </tour>\n")
+    resultat.write("</entretient>\n")
+
+print("La tokenisation est terminé, vous retrouverez le résultat dans le fichier :", titre2)

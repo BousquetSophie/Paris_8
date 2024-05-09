@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TEXT SYSTEM "https://cocoon.huma-num.fr/schemas/Archive.dtd">
+<TEXT xml:lang="fr" id="crdo-FRA_ESLO_omelette006">
+    <HEADER>
+        <TITLE xml:lang="fr">006</TITLE>
+        <SOUNDFILE href="006.wav"/>
+    </HEADER>
+    <S who="FD 237" id="elso006s68">
+        <AUDIO start="105.657" end="107.573"/>
+        <FORM kindOf="ortho"> je je i(l) il nous nou(s) vou(s) vou(s) (i)l il je (j)e hello </FORM>
+    </S>
+    <S who="JK" id="elso006s69">
+        <AUDIO start="108.861" end="116.496"/>
+        <FORM kindOf="ortho"> hello bye bye bye</FORM>
+    </S>
+</TEXT>
