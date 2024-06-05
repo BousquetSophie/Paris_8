@@ -18,11 +18,16 @@ est_dans_p = False
 texte_dans_p = ""
 
 titre = input("Entrez le nom de votre document : ")
+
 #Chargement du fichier XML
 fichier = etree.parse(titre)
 
+#Titres des différents fichiers
 titre2 = titre.replace(".xml", "_tokeniser.xml")
+titre_brut = titre.replace(".xml", "_brut.txt")
+titre_clear = titre.replace(".xml", "_nettoyer.txt")
 
+#Création fichier XML tokeniser
 with open(titre2, 'w') as resultat:
     print("\nVotre document est en cours de tokenisation veuillez patienter.\n")
     #En-tête du fichier XML
@@ -38,7 +43,7 @@ with open(titre2, 'w') as resultat:
         for i, token in enumerate(phrase):
             #Gestion des hésitation
             if token.text in hesitation :
-                resultat.write("        <hesitation> " + token.text + " </hesitation>\n")
+                resultat.write("        <hesitation>" + token.text + "</hesitation>\n")
                 mot_avant = token.text
             #Ignorer les parenthèses
             elif(token.text == "(") or (token.text == ")"):
@@ -49,45 +54,45 @@ with open(titre2, 'w') as resultat:
                 txt = re.sub(parenthese, "", txt)
                 if(i+1 < len(phrase)) and (phrase[i+1].text == ")"):
                     if(mot_avant == txt): #Gestion de répétition avec anomalie
-                        resultat.write("        <repetition original=" + '"' + token.text + ')"> ' + txt + " </repetition>\n")
+                        resultat.write("        <repetition original=" + '"' + token.text + ')">' + txt + "</repetition>\n")
                     else :
-                        resultat.write("        <mot original=" + '"' + token.text + ')"> ' + txt + " </mot>\n")
+                        resultat.write("        <mot original=" + '"' + token.text + ')">' + txt + "</mot>\n")
                 elif(phrase[i-1].text == "("):
                     if(mot_avant == txt): #Gestion de répétition avec anomalie
-                        resultat.write("        <repetition original=" + '"(' + token.text + '"> ' + txt + " </repetition>\n")
+                        resultat.write("        <repetition original=" + '"(' + token.text + '">' + txt + "</repetition>\n")
                     else :
-                        resultat.write("        <mot original=" + '"(' + token.text + '"> ' + txt + " </mot>\n")
+                        resultat.write("        <mot original=" + '"(' + token.text + '">' + txt + "</mot>\n")
                 else :
                     if(mot_avant == txt): #Gestion de répétition avec anomalie
-                        resultat.write("        <repetition original=" + '"' + token.text + '"> ' + txt + " </repetition>\n")
+                        resultat.write("        <repetition original=" + '"' + token.text + '">' + txt + "</repetition>\n")
                     else :
-                        resultat.write("        <mot original=" + '"' + token.text + '"> ' + txt + " </mot>\n")
+                        resultat.write("        <mot original=" + '"' + token.text + '">' + txt + "</mot>\n")
                 mot_avant = txt
             #Gestion des parenthèse de c() et e()
             elif(i+2 < len(phrase)) and (phrase[i+1].text == "(") and (phrase[i+2].text == ")"):
                 mot = token.text + "()"
                 if(mot == "e()"):
-                    resultat.write("        <hesitation original=" + '"' + mot + '"> heu </hesitation>\n')
+                    resultat.write("        <hesitation original=" + '"' + mot + '">heu</hesitation>\n')
                     mot_avant = "heu"
                 elif(mot == "c()"):
                     if(mot_avant == "ça"): #Gestion de répétition avec anomalie
-                        resultat.write("        <repetition original=" + '"' + mot + '"> ça </repetition>\n')
+                        resultat.write("        <repetition original=" + '"' + mot + '">ça</repetition>\n')
                     else:
-                        resultat.write("        <mot original=" + '"' + mot + '"> ça </mot>\n')
+                        resultat.write("        <mot original=" + '"' + mot + '">ça</mot>\n')
                     mot_avant = "ça"
             #Extraction des - dans les tokens
             elif (token.text[0] == "-"):
-                resultat.write("        <mot> " + "-" + " </mot>\n")
-                resultat.write("        <mot> " + token.text[1:] + " </mot>\n")
+                resultat.write("        <mot>" + "-" + "</mot>\n")
+                resultat.write("        <mot>" + token.text[1:] + "</mot>\n")
                 mot_avant = token.text[1:]
             #Gestion des répétitions
             elif (mot_avant == token.text):
-                resultat.write("        <repetition> " + token.text + " </repetition>\n")
+                resultat.write("        <repetition>" + token.text + "</repetition>\n")
                 mot_avant = token.text
             #Gestion des descriptions d'ambiance
             elif (est_dans_p or token.text == "["):
                 if (token.text == "]"):
-                    resultat.write("        <ambiance> " + texte_dans_p + "]" + " </ambiance>\n")
+                    resultat.write("        <ambiance>" + texte_dans_p + "]" + "</ambiance>\n")
                     mot_avant = texte_dans_p
                     est_dans_p = False
                     texte_dans_p = ""
@@ -97,10 +102,37 @@ with open(titre2, 'w') as resultat:
             #Gestion des mots sans anomalie
             else :
                 if (token.text != " "):
-                    resultat.write("        <mot> " + token.text + " </mot>\n")
+                    resultat.write("        <mot>" + token.text + "</mot>\n")
                     mot_avant = token.text
             
         resultat.write("    </tour>\n")
     resultat.write("</entretient>\n")
 
-print("La tokenisation est terminé, vous retrouverez le résultat dans le fichier :", titre2)
+#Chargement du fichier XML tokenisé
+fichier2 = etree.parse(titre2)
+
+#Création du fichier texte avec les données brut
+with open(titre_brut, 'w') as brut:
+    for phrase in fichier.xpath("/TEXT/S/FORM"):
+        brut.write(phrase.text + "\n")
+
+#Création du fichier texte avec les données tokenisées
+with open(titre_clear, 'w') as clear:
+    for tour in fichier2.xpath("/entretient/tour"):
+        vide = False
+        mots = tour.xpath("mot")
+        for i in range(len(mots)):
+            mot = mots[i]
+            if mot.text != "":
+                # Vérification pour les contractions et le mot suivant
+                if mot.text[-1] == "'" or mot.text == "-"or (i + 1 < len(mots) and mots[i + 1].text == "-"):
+                    clear.write(mot.text)
+                else:
+                    clear.write(mot.text + " ")
+                vide = True
+        if vide:  # si le tour est vide on a un \n en trop
+            clear.write("\n")
+
+print("La tokenisation est terminée, vous retrouverez le résultat dans le fichier :", titre2, "\n")
+print("Le fichier texte avec le texte brut se trouve dans le fichier :", titre_brut, "\n")
+print("Le fichier texte avec le texte tokenisé se trouve dans le fichier :", titre_clear)
