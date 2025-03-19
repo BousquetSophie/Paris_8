@@ -1,0 +1,53 @@
+Application de Gestion de Contacts en Java et SQLite
+
+Description
+Cette application de gestion de contacts est développée en Java avec une base de données SQLite. Elle permet de :
+- Afficher une liste de contacts enregistrés.
+- Ajouter de nouveaux contacts.
+- Supprimer des contacts existants.
+- Rechercher un contact par son nom.
+
+L'application utilise la bibliothèque `sqlite-jdbc` pour l'interaction avec la base de données SQLite.
+
+Technologies utilisées
+- **Langage** : Java (Swing pour l'interface graphique)
+- **Base de données** : SQLite
+- **Bibliothèque JDBC** : [sqlite-jdbc](https://github.com/xerial/sqlite-jdbc)
+
+Installation
+Prérequis
+- Java installé
+- SQLite installé
+
+Configuration du projet
+1. Cloner le projet ou télécharger les fichiers sources.
+2. Compiler et exécuter l'application :
+   ```
+   javac -cp ".:libs/sqlite-jdbc-3.49.1.0.jar" page_accueil.java
+   java -cp ".:libs/sqlite-jdbc-3.49.1.0.jar" page_accueil
+   ```
+
+Utilisation
+1. **Lancer l'application** : L'écran principal affiche la liste des contacts.
+2. **Ajouter un contact** : Cliquer sur le bouton "+", remplir les champs et enregistrer. 
+3. **Rechercher un contact** : Taper un nom dans le champ de recherche et cliquer sur la loupe.
+4. **Réinitialisation de la recherche : Pour revoir tous les contacts, supprimez le texte de la barre de recherche et appuyez à nouveau sur la loupe.
+5. **Supprimer un contact** : Cliquer sur l'icône de la poubelle à côté du contact.
+
+Structure de la Base de Données
+Le fichier `baseDeDonnees.db` contient une table `contact` avec la structure suivante :
+```sql
+CREATE TABLE IF NOT EXISTS contact (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nom TEXT,
+    telephone TEXT,
+    mail TEXT
+);
+```
+
+Remarque
+Si la base de données `baseDeDonnees.db` n'existe pas, elle sera créée automatiquement lors de l'exécution de l'application.
+
+## Auteur
+Développé par Sophie Bousquet.
+
